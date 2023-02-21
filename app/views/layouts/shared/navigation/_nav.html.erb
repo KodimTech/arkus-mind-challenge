@@ -20,24 +20,13 @@
             </a>
           </li>
           <li class="nav-item dropdown ps-3 d-flex align-items-center">
-            <a href="javascript:;" class="nav-link text-body p-0" id="navOptionsButton" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="bi bi-gear-fill" style="font-size: 1rem"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end px-2 py-3 me-sm-n4" aria-labelledby="navOptionsButton" id="nav-profile-option">
-              <li class="mb-0">
-                <div class="dropdown-item border-radius-md">
-                  <div class="d-flex py-1">
-                    <div class="d-flex flex-column justify-content-center">
-                      <h6 class="text-sm font-weight-normal mb-1">
-                        <% if current_user.present? %>
-                          <%= link_to 'Cerrar sesion', sign_out_sessions_path, 'data-turbo-method': :delete, class: 'nav-link' %>
-                        <% end %>
-                      </h6>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
+            <div class="dropdown">
+              <i class="btn border-0 shadow-blur bi bi-gear-fill" style="font-size: 1rem;" data-bs-toggle="dropdown"></i>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <%= link_to 'Mi perfil', profile_path(id: current_user.id), class: 'dropdown-item' %>
+                <%= link_to 'Cerrar sesion', sign_out_sessions_path, 'data-turbo-method': :delete, class: 'dropdown-item' %>
+              </ul>
+            </div>
           </li>
         </ul>
       </div>

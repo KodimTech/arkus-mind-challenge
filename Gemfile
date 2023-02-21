@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'active_decorator'
 gem 'discard', '~> 1.2'
 gem 'jsbundling-rails'
 gem 'pagy', '~> 4.11'
