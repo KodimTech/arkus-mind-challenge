@@ -4,15 +4,20 @@
 #
 # Table name: users
 #
-#  id               :bigint           not null, primary key
-#  first_name       :string
-#  last_name        :string
-#  email            :string
+#  id               :bigint(8)        not null, primary key
+#  crypted_password :string
+#  discarded_at     :datetime
+#  email            :string           default(""), not null
+#  first_name       :string           default(""), not null
+#  last_name        :string           default(""), not null
+#  salt             :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
-#  discarded_at     :datetime
-#  crypted_password :string
-#  salt             :string
+#
+# Indexes
+#
+#  index_users_on_discarded_at  (discarded_at)
+#  index_users_on_email         (email) UNIQUE
 #
 class User < ApplicationRecord
   authenticates_with_sorcery!

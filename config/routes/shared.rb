@@ -9,5 +9,7 @@ Rails.application.routes.draw do
       post :create, path: :sign_in
       delete :sign_out, to: 'sessions#destroy'
     end
+
+    resources :profiles, only: [:show, :edit, :update]
   end
 end
