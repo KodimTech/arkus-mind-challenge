@@ -5,9 +5,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'active_decorator'
 gem 'discard', '~> 1.2'
+gem 'figaro'
 gem 'jsbundling-rails'
+gem 'jwt'
 gem 'pagy', '~> 4.11'
 gem 'pundit'
+gem 'rack-cors'
 gem 'sidekiq', '~> 6.5', '>= 6.5.8'
 gem 'sorcery', '~> 0.16.1'
 gem 'stimulus-rails'
@@ -39,6 +42,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 5.0.0'
   gem 'rexml', '~> 3.2', '>= 3.2.4'
+  gem 'rswag'
   gem 'shoulda-matchers'
 end
 
