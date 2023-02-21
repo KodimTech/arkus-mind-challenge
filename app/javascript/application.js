@@ -7,5 +7,6 @@ import './theme/smooth-scrollbar.min'
 
 import bootstrap from 'bootstrap/dist/js/bootstrap.bundle'
 window.bootstrap = bootstrap
+
 import "trix"
 import "@rails/actiontext"

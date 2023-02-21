@@ -8,6 +8,7 @@
 #  email            :string           default(""), not null
 #  first_name       :string           default(""), not null
 #  last_name        :string           default(""), not null
+#  role             :string
 #  salt             :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null

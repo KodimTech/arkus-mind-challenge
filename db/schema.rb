@@ -10,9 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_21_020519) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_21_053723) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "account_team_logs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "account_team_id"
+    t.integer "start_date"
+    t.integer "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_team_id"], name: "index_account_team_logs_on_account_team_id"
+    t.index ["end_date"], name: "index_account_team_logs_on_end_date"
+    t.index ["start_date"], name: "index_account_team_logs_on_start_date"
+    t.index ["user_id"], name: "index_account_team_logs_on_user_id"
+  end
+
+  create_table "account_team_users", force: :cascade do |t|
+    t.integer "account_team_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_team_id", "user_id"], name: "index_account_team_users_on_account_team_id_and_user_id", unique: true
+  end
+
+  create_table "account_teams", force: :cascade do |t|
+    t.integer "account_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "account_id"], name: "index_account_teams_on_name_and_account_id", unique: true
+  end
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "account_name"
+    t.string "customer_name"
+    t.integer "responsible_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_name"], name: "index_accounts_on_account_name"
+    t.index ["customer_name"], name: "index_accounts_on_customer_name"
+    t.index ["responsible_name"], name: "index_accounts_on_responsible_name"
+  end
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -61,6 +101,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_21_020519) do
     t.datetime "discarded_at", precision: nil
     t.string "crypted_password"
     t.string "salt"
+    t.string "role"
     t.index ["discarded_at"], name: "index_users_on_discarded_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end

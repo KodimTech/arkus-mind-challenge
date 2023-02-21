@@ -8,6 +8,7 @@
 #  email            :string           default(""), not null
 #  first_name       :string           default(""), not null
 #  last_name        :string           default(""), not null
+#  role             :string
 #  salt             :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
@@ -21,7 +22,15 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'User Specs' do
-    context 'validations' do
+    describe 'relations' do
+      context '#has_many' do
+        it {
+          should have_many(:account_team_logs).conditions(role: Users::Role::REGULAR)
+        }
+      end
+    end
+
+    describe 'validations' do
       context 'presence' do
         it {
           should validate_presence_of(:first_name)

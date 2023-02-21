@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'active_decorator'
 gem 'discard', '~> 1.2'
+gem 'enumerate_it'
 gem 'figaro'
 gem 'jsbundling-rails'
 gem 'jwt'
