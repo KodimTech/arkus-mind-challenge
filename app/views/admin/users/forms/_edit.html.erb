@@ -1,0 +1,65 @@
+<%= form_with model: @user, url: admin_user_path, method: :put do |form| %>
+  <div class="card">
+    <div class="card-header">
+      <h6>Edit User</h6>
+    </div>
+
+    <hr class="horizontal dark mb-0 mt-0">
+
+    <div class="card-body">
+      <%= turbo_frame_tag 'form-errors' %>
+
+      <div class="row">
+        <div class="col">
+          <label>Role</label>
+          <%= form.select :role,
+                          Users::Role.list.map { |role| [role.humanize, role] }.sort,
+                          { prompt: 'Select' },
+                          { class: 'form-select' } %>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col">
+          <label>First name</label>
+          <%= form.text_field :first_name, class: 'form-control', required: true %>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col">
+          <label>Last name</label>
+          <%= form.text_field :last_name, class: 'form-control', required: true %>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col">
+          <label>Email</label>
+          <%= form.email_field :email, class: 'form-control', required: true %>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col">
+          <label>Password</label>
+          <%= form.password_field :password, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <hr class="horizontal dark mb-0 mt-0">
+
+    <div class="card-footer">
+      <div class="row">
+        <div class="col">
+          <%= link_to 'Back', admin_users_path, class: 'btn bg-gradient-secondary w-100' %>
+        </div>
+
+        <div class="col">
+          <%= form.submit 'Save', class: 'btn bg-gradient-success w-100' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,5 @@
+<% if data.present? %>
+  <% data.each do |object| %>
+    <%= render partial: rows_partial, locals: { klass.to_sym => object } %>
+  <% end %>
+<% end %>

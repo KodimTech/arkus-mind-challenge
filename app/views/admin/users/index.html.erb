@@ -1,0 +1,7 @@
+<%= render Shared::Buttons::DropdownComponent.new(options: UserDecorator.index_dropdown_options) %>
+
+<%= render Shared::Table::IndexComponent.new(
+  data: @users,
+  rows_partial: 'admin/users/partials/table_content',
+  headers: UserDecorator.index_table_headers
+) %>

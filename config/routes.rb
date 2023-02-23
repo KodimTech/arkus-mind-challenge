@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   root to: 'shared/sessions#new'
 
+  draw(:admin)
   draw(:api)
   draw(:shared)
 

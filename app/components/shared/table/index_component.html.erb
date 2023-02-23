@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-body">
+    <table class="table align-items-center mb-0 table-responsive">
+      <thead>
+        <% headers.each do |header| %>
+          <th class="text-uppercase text-xxs font-weight-bolder <%= header[:padding] %>"><%= t(header[:title]) %></th>
+        <% end %>
+      </thead>
+
+      <tbody id="<%= turbo_frame %>">
+      <%= render Shared::Table::IndexRowsComponent.new(data: data, rows_partial: rows_partial) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+

@@ -1,0 +1,12 @@
+<div class="dropdown">
+  <button class="btn bg-gradient-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Options
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <% options.each do |option| %>
+      <li>
+        <%= link_to option[:title], option[:url], method: option[:method], class: 'dropdown-item' %>
+      </li>
+    <% end %>
+  </ul>
+</div>

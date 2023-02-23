@@ -13,11 +13,14 @@
   </head>
 
   <body class="g-sidenav-show bg-gray-100">
-  <%= render partial: 'layouts/shared/navigation/sidebar' %>
+    <%= render Shared::Navigation::SidebarComponent.new %>
 
     <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg">
       <%= render partial: 'layouts/shared/navigation/nav' %>
-      <%= yield %>
+
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
     </main>
   </body>
 </html>

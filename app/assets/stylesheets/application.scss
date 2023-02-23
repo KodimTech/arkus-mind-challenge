@@ -20,3 +20,7 @@
 #nav-profile-option::before {
   display: none !important;
 }
+
+.dropdown .dropdown-toggle:after {
+  display: none;
+}
