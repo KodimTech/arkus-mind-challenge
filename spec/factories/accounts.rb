@@ -5,7 +5,7 @@
 #  id               :bigint(8)        not null, primary key
 #  account_name     :string
 #  customer_name    :string
-#  responsible_name :integer(4)
+#  responsible_name :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #

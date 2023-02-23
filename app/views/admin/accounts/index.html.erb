@@ -1,0 +1,7 @@
+<%= render Shared::Buttons::DropdownComponent.new(options: AccountDecorator.index_dropdown_options) %>
+
+<%= render Shared::Table::IndexComponent.new(
+  data: @accounts,
+  rows_partial: 'admin/accounts/partials/table_content',
+  headers: AccountDecorator.index_table_headers
+) %>

@@ -1,0 +1,48 @@
+<%= form_with model: @account, url: admin_account_path, method: :put do |form| %>
+  <div class="card">
+    <div class="card-header">
+      <h6>Edit Account</h6>
+    </div>
+
+    <hr class="horizontal dark mb-0 mt-0">
+
+    <div class="card-body">
+      <%= turbo_frame_tag 'form-errors' %>
+
+      <div class="row">
+        <div class="col">
+          <label>Account Name</label>
+          <%= form.text_field :account_name, class: 'form-control', required: true %>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col">
+          <label>Customer Name</label>
+          <%= form.text_field :customer_name, class: 'form-control', required: true %>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col">
+          <label>Responsible Name</label>
+          <%= form.text_field :responsible_name, class: 'form-control', required: true %>
+        </div>
+      </div>
+    </div>
+
+    <hr class="horizontal dark mb-0 mt-0">
+
+    <div class="card-footer">
+      <div class="row">
+        <div class="col">
+          <%= link_to 'Back', admin_accounts_path, class: 'btn bg-gradient-secondary w-100' %>
+        </div>
+
+        <div class="col">
+          <%= form.submit 'Save', class: 'btn bg-gradient-success w-100' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

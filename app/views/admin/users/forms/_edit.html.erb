@@ -15,7 +15,7 @@
           <%= form.select :role,
                           Users::Role.list.map { |role| [role.humanize, role] }.sort,
                           { prompt: 'Select' },
-                          { class: 'form-select' } %>
+                          { class: 'form-select', required: true } %>
         </div>
       </div>
 

@@ -7,13 +7,15 @@
     <hr class="horizontal dark mb-0 mt-0">
 
     <div class="card-body">
+      <%= turbo_frame_tag 'form-errors' %>
+
       <div class="row">
         <div class="col">
           <label>Role</label>
           <%= form.select :role,
                           Users::Role.list.map { |role| [role.humanize, role] }.sort,
                           { prompt: 'Select' },
-                          { class: 'form-select' } %>
+                          { class: 'form-select', required: true } %>
         </div>
       </div>
 

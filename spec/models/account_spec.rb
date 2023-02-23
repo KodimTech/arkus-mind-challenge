@@ -5,7 +5,7 @@
 #  id               :bigint(8)        not null, primary key
 #  account_name     :string
 #  customer_name    :string
-#  responsible_name :integer(4)
+#  responsible_name :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #
@@ -33,6 +33,12 @@ RSpec.describe Account, type: :model do
           should validate_presence_of :account_name
           should validate_presence_of :customer_name
           should validate_presence_of :responsible_name
+        }
+      end
+
+      context '#uniqueness' do
+        it {
+          should validate_uniqueness_of :account_name
         }
       end
     end
