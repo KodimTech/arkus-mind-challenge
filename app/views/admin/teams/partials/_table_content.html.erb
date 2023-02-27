@@ -1,0 +1,10 @@
+<tr class="table-content-tr text-xs" id="<%= dom_id(account_team) %>">
+  <td class="ps-1" style="width: 50%"><%= account_team.name %></td>
+  <td class="ps-1" style="width: 40%"><%= account_team.users.size %></td>
+
+  <td class="ps-1 pt-4" style="width: 10%">
+    <%= render Shared::Buttons::DropdownComponent.new(
+      options: AccountTeamDecorator.table_dropdown_options(@account.id, account_team.id)
+    ) %>
+  </td>
+</tr>

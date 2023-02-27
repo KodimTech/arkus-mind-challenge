@@ -51,4 +51,10 @@ module UserDecorator
       { title: 'Users', url: '/admin/users', icon: 'bi bi-people' }
     ]
   end
+
+  def self.regular_options
+    [
+      { title: 'Dashboard', url: '/dashboard', icon: 'bi bi-house' },
+    ]
+  end
 end

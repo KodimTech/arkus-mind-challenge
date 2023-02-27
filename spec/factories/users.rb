@@ -5,9 +5,9 @@
 #  id               :bigint(8)        not null, primary key
 #  crypted_password :string
 #  discarded_at     :datetime
-#  email            :string           default(""), not null
-#  first_name       :string           default(""), not null
-#  last_name        :string           default(""), not null
+#  email            :string
+#  first_name       :string
+#  last_name        :string
 #  role             :string
 #  salt             :string
 #  created_at       :datetime         not null

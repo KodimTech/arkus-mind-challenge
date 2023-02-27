@@ -1,0 +1,28 @@
+<div class="row mt-3">
+  <div class="col">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col">
+            <h6>Users</h6>
+          </div>
+
+          <div class="col text-end">
+            <%= link_to 'Assign User',
+                        new_admin_account_team_team_user_path(account_id: @account.id, team_id: @account_team.id),
+                        class: 'btn bg-gradient-info',
+                        data: { controller: 'shared--turbo-request' } %>
+          </div>
+        </div>
+      </div>
+
+      <hr class="horizontal dark p-0 m-0">
+
+      <%= render Shared::Table::IndexComponent.new(
+        data: @account_team.account_team_users,
+        rows_partial: 'admin/teams/partials/show_users_table_content',
+        headers: AccountTeamDecorator.index_table_headers
+      ) %>
+    </div>
+  </div>
+</div>

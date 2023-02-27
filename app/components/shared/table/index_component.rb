@@ -10,7 +10,7 @@ class Shared::Table::IndexComponent < ViewComponent::Base
     @rows_partial = rows_partial
     @headers = headers
 
-    @klass = @data.klass.name.downcase
-    @turbo_frame = "#{klass.underscore.tr('_', '-')}-table"
+    @klass = @data.klass.name.underscore
+    @turbo_frame = "#{klass.tr('_', '-')}-table"
   end
 end

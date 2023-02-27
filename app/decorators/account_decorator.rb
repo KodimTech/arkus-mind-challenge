@@ -19,7 +19,8 @@ module AccountDecorator
 
   def self.table_dropdown_options(object)
     [
-      { title: 'Edit', url: "/admin/accounts/#{object.id}/edit" }
+      { title: 'Details', url: "/admin/accounts/#{object.id}" },
+      { title: 'Edit', url: "/admin/accounts/#{object.id}/edit" },
     ]
   end
 end

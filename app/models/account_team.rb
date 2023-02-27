@@ -18,7 +18,7 @@ class AccountTeam < ApplicationRecord
   has_many :account_team_logs, dependent: :destroy
 
   has_many :account_team_users, dependent: :destroy
-  has_many :user, through: :account_team_users
+  has_many :users, through: :account_team_users
 
   validates :name, presence: true, uniqueness: { scope: :account_id }
 end

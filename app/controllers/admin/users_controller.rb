@@ -1,5 +1,6 @@
 module Admin
   class UsersController < Shared::DashboardsController
+    before_action :can_access?
     before_action :user, only: %i[show edit update destroy]
 
     def index

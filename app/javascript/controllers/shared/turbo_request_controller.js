@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="shared--turbo-request"
 export default class extends Controller {
   initialize() {
-    this.element.setAttribute('data-action', 'click->shared--turbo#click')
+    this.element.setAttribute('data-action', 'click->shared--turbo-request#click')
   }
 
   click(e) {

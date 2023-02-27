@@ -9,6 +9,6 @@ class Shared::Table::IndexRowsComponent < ViewComponent::Base
     @data = data
     @rows_partial = rows_partial
 
-    @klass = @data.klass.name.downcase
+    @klass = @data.klass.name.underscore
   end
 end

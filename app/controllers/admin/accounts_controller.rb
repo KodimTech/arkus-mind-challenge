@@ -1,5 +1,6 @@
 module Admin
   class AccountsController < Shared::DashboardsController
+    before_action :can_access?
     before_action :account, only: %i[show edit update destroy]
     def index
       @pagy, @accounts = pagy(Account.all, items: 50)
@@ -41,9 +42,9 @@ module Admin
 
     def permitted_params
       params.require(:account).permit(
+        :responsible_id,
         :account_name,
-        :customer_name,
-        :responsible_name
+        :customer_name
       )
     end
   end

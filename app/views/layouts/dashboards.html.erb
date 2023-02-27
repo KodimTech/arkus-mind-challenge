@@ -21,6 +21,8 @@
       <div class="container-fluid">
         <%= yield %>
       </div>
+
+      <%= turbo_frame_tag 'modal_form' %>
     </main>
   </body>
 </html>

@@ -1,0 +1,2 @@
+<%= turbo_stream.remove('modal_form') %>
+<%= turbo_stream.append('account-team-user-table', partial: 'admin/team_users/partials/table_content', locals: { account_team_user: @account_team_user }) %>

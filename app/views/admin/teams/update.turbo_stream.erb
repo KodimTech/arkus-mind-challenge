@@ -1,0 +1,2 @@
+<%= turbo_stream.remove('modal_form') %>
+<%= turbo_stream.replace("account_team_#{@account_team.id}", partial: 'admin/teams/partials/table_content', locals: { account_team: @account_team }) %>

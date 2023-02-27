@@ -1,0 +1,39 @@
+<%= turbo_frame_tag 'modal_form' do %>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controller="shared--modal-request">
+    <div class="modal-dialog modal-xs modal-dialog-centered">
+      <div class="modal-content">
+        <%= turbo_frame_tag 'modal_form_body' do %>
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Assign User</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+              <i class="bi bi-x-lg" style="color: black"></i>
+            </button>
+          </div>
+
+          <%= form_with model: AccountTeamUser.new, url: admin_account_team_team_users_path, method: :post do |form| %>
+            <%= form.hidden_field :account_team_id, value: @account.id %>
+
+            <div class="modal-body">
+              <div class="modal-form-body">
+                <div class="row mb-2">
+                  <div class="col">
+                    <label>User</label>
+                    <%= form.select :user_id,
+                                    @users_list.map { |user| ["#{user.first_name}  #{user.last_name}", user.id] }.sort,
+                                    { }, { class: 'form-select' } %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <%= form.submit 'Assign', class: 'btn btn-success w-100' %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_23_151823) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_21_053723) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,12 +46,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_23_151823) do
   create_table "accounts", force: :cascade do |t|
     t.string "account_name"
     t.string "customer_name"
-    t.string "responsible_name"
+    t.integer "responsible_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["account_name"], name: "index_accounts_on_account_name"
     t.index ["customer_name"], name: "index_accounts_on_customer_name"
-    t.index ["responsible_name"], name: "index_accounts_on_responsible_name"
   end
 
   create_table "action_text_rich_texts", force: :cascade do |t|
@@ -93,11 +92,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_23_151823) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "first_name", default: "", null: false
-    t.string "last_name", default: "", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "email", default: "", null: false
     t.datetime "discarded_at", precision: nil
     t.string "crypted_password"
     t.string "salt"
