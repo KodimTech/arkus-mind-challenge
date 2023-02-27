@@ -21,7 +21,8 @@ module UserDecorator
 
   def self.table_dropdown_options(object)
     [
-      { title: 'Edit user', url: "/admin/users/#{object.id}/edit" }
+      { title: 'Details', url: "/admin/users/#{object.id}" },
+      { title: 'Edit', url: "/admin/users/#{object.id}/edit" },
     ]
   end
 

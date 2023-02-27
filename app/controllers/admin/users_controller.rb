@@ -13,7 +13,12 @@ module Admin
       if @user.save
         redirect_to admin_users_path
       else
-        render :new
+        render turbo_stream: turbo_stream.replace(
+          'form-errors',
+          render_to_string(
+            Shared::Forms::ErrorsComponent.new(errors: @account.errors.full_messages)
+          )
+        )
       end
     end
 

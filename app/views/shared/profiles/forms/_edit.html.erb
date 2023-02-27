@@ -1,48 +1,44 @@
 <%= form_with model: @user, url: profile_path, method: :put do |form| %>
-  <div class="row py-4">
-    <div class="col">
-      <div class="col-12 col-md-6 col-xl-4 mt-md-0 mt-4">
-        <div class="card h-100">
-          <div class="card-header pb-0">
-            <div class="row">
-              <div class="col-md-6 d-flex align-items-center">
-                <h6 class="mb-0">Profile Information</h6>
-              </div>
-              <div class="col-md-6 text-end">
-                <div class="btn-group " role="group" aria-label="Basic example">
-                  <%= link_to 'Cancel', profile_path(@user), class: 'btn btn-danger' %>
-                  <%= form.submit 'Save', class: 'btn btn-success' %>
-                </div>
-              </div>
+  <div class="col-xs-12 col-md-6 col-xl-6 mt-md-0 mt-4">
+    <div class="card h-100">
+      <div class="card-header pb-0">
+        <div class="row">
+          <div class="col-md-6 d-flex align-items-center">
+            <h6 class="mb-0">Profile Information</h6>
+          </div>
+          <div class="col-md-6 text-end">
+            <div class="btn-group " role="group" aria-label="Basic example">
+              <%= link_to 'Cancel', profile_path(@user), class: 'btn btn-danger' %>
+              <%= form.submit 'Save', class: 'btn btn-success' %>
             </div>
           </div>
-          <div class="card-body">
-            <p class="text-sm">
-              Hi, I’m <%= @user.full_name %>, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).
-            </p>
-
-            <hr class="horizontal dark mt-2">
-
-            <%= turbo_frame_tag 'form-errors' %>
-
-            <ul class="list-group">
-              <li class="list-group-item border-0 ps-0 pt-0 text-sm">
-                <strong class="text-dark">First Name:</strong> &nbsp;
-                <%= form.text_field :first_name, class: 'form-control mt-2', required: true %>
-              </li>
-
-              <li class="list-group-item border-0 ps-0 text-sm">
-                <strong class="text-dark">Last Name:</strong> &nbsp;
-                <%= form.text_field :last_name, class: 'form-control mt-2', required: true %>
-              </li>
-
-              <li class="list-group-item border-0 ps-0 text-sm">
-                <strong class="text-dark">Email:</strong> &nbsp;
-                <%= form.email_field :email, class: 'form-control mt-2', required: true %>
-              </li>
-            </ul>
-          </div>
         </div>
+      </div>
+      <div class="card-body">
+        <p class="text-sm">
+          Hi, I’m <%= @user.full_name %>, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).
+        </p>
+
+        <hr class="horizontal dark mt-2">
+
+        <%= turbo_frame_tag 'form-errors' %>
+
+        <ul class="list-group">
+          <li class="list-group-item border-0 ps-0 pt-0 text-sm">
+            <strong class="text-dark">First Name:</strong> &nbsp;
+            <%= form.text_field :first_name, class: 'form-control mt-2', required: true %>
+          </li>
+
+          <li class="list-group-item border-0 ps-0 text-sm">
+            <strong class="text-dark">Last Name:</strong> &nbsp;
+            <%= form.text_field :last_name, class: 'form-control mt-2', required: true %>
+          </li>
+
+          <li class="list-group-item border-0 ps-0 text-sm">
+            <strong class="text-dark">Email:</strong> &nbsp;
+            <%= form.email_field :email, class: 'form-control mt-2', required: true %>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

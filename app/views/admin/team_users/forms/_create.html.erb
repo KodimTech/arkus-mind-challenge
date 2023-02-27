@@ -1,6 +1,6 @@
 <%= turbo_frame_tag 'modal_form' do %>
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controller="shared--modal-request">
-    <div class="modal-dialog modal-xs modal-dialog-centered">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <%= turbo_frame_tag 'modal_form_body' do %>
 
@@ -12,7 +12,7 @@
           </div>
 
           <%= form_with model: AccountTeamUser.new, url: admin_account_team_team_users_path, method: :post do |form| %>
-            <%= form.hidden_field :account_team_id, value: @account.id %>
+            <%= form.hidden_field :account_team_id, value: @account_team.id %>
 
             <div class="modal-body">
               <div class="modal-form-body">
@@ -22,6 +22,16 @@
                     <%= form.select :user_id,
                                     @users_list.map { |user| ["#{user.first_name}  #{user.last_name}", user.id] }.sort,
                                     { }, { class: 'form-select' } %>
+                  </div>
+
+                  <div class="col">
+                    <label>Start date</label>
+                    <%= form.date_field :start_date, class: 'form-control', required: true %>
+                  </div>
+
+                  <div class="col">
+                    <label>End date</label>
+                    <%= form.date_field :end_date, class: 'form-control', required: true %>
                   </div>
                 </div>
               </div>

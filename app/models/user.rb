@@ -25,9 +25,7 @@ class User < ApplicationRecord
 
   include Discard::Model
 
-  has_many :account_team_logs, -> { where(role: Users::Role::REGULAR) }
-
-  has_many :account_team_users, -> { where(role: Users::Role::REGULAR) }
+  has_many :account_team_users
   has_many :account_teams, through: :account_team_users
 
   has_enumeration_for :role, with: Users::Role, create_helpers: true

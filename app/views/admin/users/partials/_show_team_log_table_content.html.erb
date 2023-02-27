@@ -1,0 +1,7 @@
+<tr class="table-content-tr text-xs" id="<%= dom_id(account_team_user) %>">
+  <td class="ps-1" style="width: 20%"><%= account_team_user.user.full_name %></td>
+  <td class="ps-1" style="width: 20%"><%= account_team_user.start_date %></td>
+  <td class="ps-1" style="width: 20%"><%= account_team_user.end_date %></td>
+  <td class="ps-1" style="width: 20%"><%= l(account_team_user.created_at, format: '%Y-%m-%d') %></td>
+  <td class="ps-1" style="width: 20%"><%= account_team_user.status.humanize %></td>
+</tr>

@@ -21,4 +21,10 @@ class AccountTeam < ApplicationRecord
   has_many :users, through: :account_team_users
 
   validates :name, presence: true, uniqueness: { scope: :account_id }
+
+  def users_size
+    return 0 if account_team_users.blank?
+
+    account_team_users.where(status: AccountTeamUsers::Status::ACTIVE).size
+  end
 end

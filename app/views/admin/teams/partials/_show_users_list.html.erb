@@ -19,9 +19,9 @@
       <hr class="horizontal dark p-0 m-0">
 
       <%= render Shared::Table::IndexComponent.new(
-        data: @account_team.account_team_users,
-        rows_partial: 'admin/teams/partials/show_users_table_content',
-        headers: AccountTeamDecorator.index_table_headers
+        data: @account_team.account_team_users.where(status: AccountTeamUsers::Status::ACTIVE),
+        rows_partial: 'admin/team_users/partials/table_content',
+        headers: AccountTeamUserDecorator.index_table_headers
       ) %>
     </div>
   </div>
