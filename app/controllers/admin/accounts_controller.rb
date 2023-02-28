@@ -2,8 +2,9 @@ module Admin
   class AccountsController < Shared::DashboardsController
     before_action :can_access?
     before_action :account, only: %i[show edit update destroy]
+
     def index
-      @pagy, @accounts = pagy(Account.all, items: 50)
+      @pagy, @accounts = pagy(Account.preload(:responsible).all, items: 50)
     end
 
     def create

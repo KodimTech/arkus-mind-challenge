@@ -41,7 +41,8 @@ module UserDecorator
     [
       { title: 'Dashboard', url: '/dashboard', icon: 'bi bi-house' },
       { title: 'Accounts', url: '/admin/accounts', icon: 'bi bi-shop-window' },
-      { title: 'Users', url: '/admin/users', icon: 'bi bi-people' }
+      { title: 'Users', url: '/admin/users', icon: 'bi bi-people' },
+      { title: 'Logs', url: '/admin/logs', icon: 'bi bi-people' }
     ]
   end
 
@@ -49,7 +50,8 @@ module UserDecorator
     [
       { title: 'Dashboard', url: '/dashboard', icon: 'bi bi-house' },
       { title: 'Accounts', url: '/admin/accounts', icon: 'bi bi-shop-window' },
-      { title: 'Users', url: '/admin/users', icon: 'bi bi-people' }
+      { title: 'Users', url: '/admin/users', icon: 'bi bi-people' },
+      { title: 'Logs', url: '/admin/logs', icon: 'bi bi-people' }
     ]
   end
 

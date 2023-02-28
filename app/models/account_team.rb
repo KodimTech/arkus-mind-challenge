@@ -22,6 +22,11 @@ class AccountTeam < ApplicationRecord
 
   validates :name, presence: true, uniqueness: { scope: :account_id }
 
+  def active_users
+    account_team_users.preload(:user)
+                      .where(status: AccountTeamUsers::Status::ACTIVE)
+  end
+
   def users_size
     return 0 if account_team_users.blank?
 

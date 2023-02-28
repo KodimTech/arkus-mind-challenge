@@ -19,7 +19,7 @@
       <hr class="horizontal dark p-0 m-0">
 
       <%= render Shared::Table::IndexComponent.new(
-        data: @account_team.account_team_users.where(status: AccountTeamUsers::Status::ACTIVE),
+        data: @account_team.active_users,
         rows_partial: 'admin/team_users/partials/table_content',
         headers: AccountTeamUserDecorator.index_table_headers
       ) %>

@@ -18,6 +18,10 @@
 #  index_account_team_users_on_start_date                   (start_date)
 #
 class AccountTeamUser < ApplicationRecord
+  def self.ransackable_attributes(auth_object = nil)
+    %w[account_team_id created_at end_date start_date status user_id]
+  end
+
   belongs_to :account_team
   belongs_to :user
 

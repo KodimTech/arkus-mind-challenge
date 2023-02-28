@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :logs, only: :index
+
     resources :users
   end
 end

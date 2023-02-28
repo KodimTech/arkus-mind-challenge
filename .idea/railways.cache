@@ -21,6 +21,7 @@
                                          PATCH  /admin/accounts/:id(.:format)                                                                     admin/accounts#update
                                          PUT    /admin/accounts/:id(.:format)                                                                     admin/accounts#update
                                          DELETE /admin/accounts/:id(.:format)                                                                     admin/accounts#destroy
+                              admin_logs GET    /admin/logs(.:format)                                                                             admin/logs#index
                              admin_users GET    /admin/users(.:format)                                                                            admin/users#index
                                          POST   /admin/users(.:format)                                                                            admin/users#create
                           new_admin_user GET    /admin/users/new(.:format)                                                                        admin/users#new

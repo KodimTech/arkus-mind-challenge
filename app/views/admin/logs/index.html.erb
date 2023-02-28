@@ -1,0 +1,11 @@
+<%= render Shared::Forms::SearchComponent.new(query: @query, url: admin_logs_url) %>
+
+<%= render Shared::Table::IndexComponent.new(
+  data: @logs,
+  rows_partial: 'admin/logs/partials/table_content',
+  headers: AccountTeamUserDecorator.user_log_table_headers
+) %>
+
+<div class="row mt-2 justify-content-end">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>
