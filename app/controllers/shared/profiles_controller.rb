@@ -27,7 +27,10 @@ module Shared
         :first_name,
         :last_name,
         :email,
-        :password
+        :password,
+        :english_level,
+        :technical_experience,
+        :resume_link
       )
     end
   end

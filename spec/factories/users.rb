@@ -6,6 +6,7 @@
 #  crypted_password :string
 #  discarded_at     :datetime
 #  email            :string
+#  extra_details    :jsonb
 #  first_name       :string
 #  last_name        :string
 #  role             :string

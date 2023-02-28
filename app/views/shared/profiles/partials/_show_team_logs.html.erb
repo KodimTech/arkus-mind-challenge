@@ -1,5 +1,5 @@
-<div class="row">
-  <div class="col-12 mt-md-0 mt-2">
+<div class="row mt-2">
+  <div class="col">
     <div class="card h-100">
       <div class="card-header pb-0 p-3">
         <div class="row">
@@ -11,7 +11,7 @@
 
       <%= render Shared::Table::IndexComponent.new(
         data: @user.account_team_users,
-        rows_partial: 'admin/users/partials/show_team_log_table_content',
+        rows_partial: 'shared/profiles/partials/show_team_log_table_content',
         headers: AccountTeamUserDecorator.user_log_table_headers
       ) %>
     </div>

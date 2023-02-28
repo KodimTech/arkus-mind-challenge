@@ -8,6 +8,7 @@
 #  crypted_password :string
 #  discarded_at     :datetime
 #  email            :string
+#  extra_details    :jsonb
 #  first_name       :string
 #  last_name        :string
 #  role             :string
@@ -33,4 +34,9 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
+
+  jsonb_accessor :extra_details,
+                 english_level: :string,
+                 technical_experience: :text,
+                 resume_link: :string
 end
